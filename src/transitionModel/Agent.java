@@ -1,32 +1,23 @@
 package transitionModel;
 
 public abstract class Agent {
-	private float longitude;
-	private float latitude;
+	//private Information information;
+	private float[] attribute;
+	private double entrepreneurial;//how an agent is willing to form an alliance, range from 0 to 1
+
 	
-	public Agent(float longitude, float latitude) {
-		if(isValidLocation(longitude, latitude)){
-			this.longitude = longitude;
-			this.latitude = latitude;
-		}else{
-			System.out.println("Invalid location"); // need improve
-		}
+	public Agent(float[] attribute, double entrepreneurial) {
+		this.attribute = attribute;
+		this.entrepreneurial = entrepreneurial;
 	}
 	
-	public float[] getlocation() {
-		float[] location = {this.longitude, this.latitude};
-		return location;
+	public float[] getAttribute() {
+		return attribute;
 	}
 	
-	public abstract int getdemand();
-	
-	// Whether the location is legitimate.
-	public static boolean isValidLocation(float longitude, float latitude) {
-		if((longitude > -180 && longitude <= 180) && (latitude >= -90 && latitude <= 90)){
-			return true;
-		} else {
-			return false;
-		}
+	public double getEntrepreneurial() {
+		return entrepreneurial;
 	}
+	
 	
 }

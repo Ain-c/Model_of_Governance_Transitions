@@ -1,25 +1,20 @@
 package transitionModel;
 
 public class Consumer extends Agent {
-	private int demand;
+	private float demand;
 	
-	public Consumer(float longitude, float latitude, int demand) {
-		super(longitude, latitude);
-		if(demand >= 0){
-			this.demand = demand;
-		}else{
-			System.out.println("Invalid demand"); // need improve
+	public Consumer(float[] attribute, double entrepreneurial) {
+		super(attribute, entrepreneurial);
+		if(attribute.length != World.consumerAttributeAmount){
+			System.out.print("wrong length of consumer's attribute");
 		}
-		
-		// for further attributes
-		
-	}
+	}	
 	
-	public int getdemand() {
+	public float getDemand() {
+		demand = this.getAttribute()[World.whereDemand];
+		//can add something
 		return demand;
 	}
 	
 
 }
-
-political prefernece

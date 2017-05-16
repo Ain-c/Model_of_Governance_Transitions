@@ -4,41 +4,28 @@ import java.util.*;
 
 import technic.*;
 
-public class Alliance {
-	private ArrayList prosumerList = new ArrayList();
+public class Alliance{
+	private ArrayList<Prosumer> prosumerList = new ArrayList();
 	private Technic technic;
-	private int resourceRequirement;
-	private int capacity;
+	private float[] attribute;
+
 	
-	private Alliance(ArrayList List, Technic technic, int resourceRequirement, int capacity) {
+	private Alliance(ArrayList List, Technic technic, float[] attributes) {
 		this.prosumerList = prosumerList;
 		this.technic = technic;
-		this.resourceRequirement = resourceRequirement;
-		this.capacity = capacity;
+		this.attribute = attribute;
 	}
 	
-	public void formAlliance() {
+	public Alliance formAlliance(ArrayList<Prosumer> founder){
 		
 	}
 	
-	private Technic pickTechnic(String technicName) {
-		switch(technicName.toLowerCase()){
-		case "solarpanel":
-			Technic technic = new Solarpanel();
-			break;
-		case "windfarm":
-			Technic technic = new Windfarm();
-			break;
-		// add technique
-		default:
-			System.out.println("no such technic");
-			break;
-		}
-		return technic;
+	private Technic pickTechnic(){
+		
 	}
 	
-	public void addProsumer() {
-		
+	public void addProsumer(Prosumer prosumer) {
+		this.prosumerList.add(prosumer);
 	}
 	
 	
